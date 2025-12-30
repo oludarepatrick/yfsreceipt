@@ -11,7 +11,7 @@ class AdminUserSeeder extends Seeder
     public function run(): void
     {
         DB::table('admins')->updateOrInsert(
-            ['email' => 'yssf_admin@schooldrive.com.ng'],
+            ['email' => 'yffs_admin@schooldrive.com.ng'],
             [
                 'name'       => 'Super Admin',
                 'password'   => Hash::make('password@123'),

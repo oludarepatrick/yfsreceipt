@@ -85,7 +85,7 @@ if ($validated['category'] === 'staff') {
                     'name'    => 'School Admin'
                 ],
                 'to' => [
-                    ['email_address' => ['address' => 'tenak09@gmail.com']]
+                    ['email_address' => ['address' => 'yellowfieldschools@gmail.com']]
                 ],
                 'merge_info' => $mergeData
             ]);
