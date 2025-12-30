@@ -172,7 +172,7 @@ class StudentReceiptController extends Controller
                         "name"    => "School Receipt"
                     ],
                     "to" => [
-                        ["email_address" => ["address" => $receipt->student->email ?? 'no-reply@easyflowcollege.com']]
+                        ["email_address" => ["address" => $receipt->student->email ?? 'no-reply@schooldrive.com.ng']]
                     ],
                     "merge_info" => [
                         "firstname"    => $receipt->student->firstname ?? 'N/A',
