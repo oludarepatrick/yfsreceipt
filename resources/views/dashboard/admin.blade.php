@@ -48,10 +48,8 @@
                             <div class="card-body">
                                 <h6 class="card-title text-info">Total Revenue</h6>
                                 <h5 class="mt-3 mb-0">Expected Fees: ₦{{ number_format($totalExpected, 2) }}</h5>
-                                <h5 class="mt-3 mb-0">All: #{{ number_format($totalRevenue, 2) }}</h5>
+                                <h5 class="mt-3 mb-0">TotalPaid: #{{ number_format($totalRevenue, 2) }}</h5>
                                 <h5 class="mt-3 mb-0">Outstanding: ₦{{ number_format($outstandingBalance, 2) }}</h5>
-                                <h5 class="mt-3 mb-0">Pry: #{{ number_format($totalRevenuePry, 2) }}</h5>
-                                <h5 class="mt-3 mb-0">Sec: #{{ number_format($totalRevenueSec, 2) }}</h5>
                             </div>
                         </div>
                     </div>
