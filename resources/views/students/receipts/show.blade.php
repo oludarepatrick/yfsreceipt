@@ -38,7 +38,9 @@
                         <th>Tuition</th>
                         <th>Uniform</th>
                         <th>Exam Fee</th>
+                        <th>Others</th>
                         <th>Discount</th>
+                        <th>Outstanding</th>
                         <th>Total Expected</th>
                         <th>Amount Paid</th>
                         <th>Balance Due</th>
@@ -49,7 +51,9 @@
                         <td>₦{{ number_format($receipt->tuition) }}</td>
                         <td>₦{{ number_format($receipt->uniform) }}</td>
                         <td>₦{{ number_format($receipt->exam_fee) }}</td>
+                        <td>₦{{ number_format($receipt->external_money) }}</td>
                         <td>₦{{ number_format($receipt->discount) }}</td>
+                        <td class="fw-bold text-danger">₦{{ number_format($receipt->previous_balance) }}</td>
                         <td class="fw-bold text-primary">₦{{ number_format($receipt->total_expected) }}</td>
                         <td class="fw-bold text-success">₦{{ number_format($receipt->amount_paid) }}</td>
                         <td class="fw-bold text-danger">₦{{ number_format($receipt->amount_due) }}</td>

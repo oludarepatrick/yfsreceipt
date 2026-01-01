@@ -59,6 +59,23 @@ class AdminDashboardController extends Controller
     ->groupBy('term')
     ->pluck('total', 'term');
 
+    // ✅ Total expected revenue for the entire term
+    // Based on number of students per class × fee set in school_fees.total
+    $totalExpected = DB::table('users')
+        ->join('school_fees', 'users.class', '=', 'school_fees.class')
+        ->where('users.category', 'student')
+        ->where('users.status', 'active')
+        ->sum('school_fees.total');
+
+        // ✅ Outstanding balance (Expected - Paid)
+    $outstandingBalance = max($totalExpected - $totalRevenue, 0);
+
+    // ✅ Collection percentage (avoid division by zero)
+    $collectionPercentage = $totalExpected > 0
+        ? round(($totalRevenue / $totalExpected) * 100, 2)
+        : 0;
+
+
     // Normalize terms to your expected keys
     $chartData = [
         'First Term'  => $termRevenue['First Term'] ?? 0,
@@ -72,6 +89,9 @@ class AdminDashboardController extends Controller
         'totalRevenue'   => $totalRevenue,
         'totalRevenuePry'   => $totalRevenuePry,
         'totalRevenueSec'   => $totalRevenueSec,
+        'totalExpected'      => $totalExpected,
+        'outstandingBalance'    => $outstandingBalance,
+        'collectionPercentage'  => $collectionPercentage,
         'totalSalary'    => $totalSalary,
         'recentInvoices' => $recentInvoices,
         'chartData'      => $chartData,

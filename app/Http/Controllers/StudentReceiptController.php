@@ -75,7 +75,10 @@ class StudentReceiptController extends Controller
             'tuition'        => 0,
             'uniform'        => 0,
             'exam_fee'       => 0,
+            'stationeries'   => 0,
+            'external_money' => 0,
             'discount'       => $request->discount ?? 0,
+            'previous_balance' => 0,
             'total_expected' => $totalExpected,
             'amount_paid'    => 0,
             'amount_due'     => $totalExpected - ($request->discount ?? 0),
@@ -92,6 +95,17 @@ class StudentReceiptController extends Controller
     if ($request->filled('exam_fee')) {
         $receipt->increment('exam_fee', $request->exam_fee);
     }
+    if ($request->filled('stationeries')) {
+        $receipt->increment('stationeries', $request->stationeries);
+    }
+    if ($request->filled('others')) {
+        $receipt->increment('external_money', $request->others);
+    }
+    if ($request->filled('previous_balance')) {
+        $receipt->previous_balance = $request->previous_balance;
+        //$receipt->save();
+    }
+
 
     // Save payment record
     StudentPayments::create([

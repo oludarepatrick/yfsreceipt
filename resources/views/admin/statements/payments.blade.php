@@ -57,7 +57,8 @@
                             <th>Class</th>
                             <th>Term</th>
                             <th>Session</th>
-                            <th>Amount</th>
+                            <th>Expected</th>
+                            <th>AmountPaid</th>
                             <th>Method</th>
                         </tr>
                     </thead>
@@ -70,6 +71,7 @@
                                 <td>{{ optional($p->receipt->student)->class }}</td>
                                 <td>{{ optional($p->receipt)->term }}</td>
                                 <td>{{ optional($p->receipt)->session }}</td>
+                                <td>₦{{ number_format($p->receipt->total_expected, 2) }}</td>
                                 <td>₦{{ number_format($p->amount_paid, 2) }}</td>
                                 <td>{{ ucfirst($p->payment_method) }}</td>
                             </tr>
