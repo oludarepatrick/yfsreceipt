@@ -28,8 +28,10 @@
                     <div class="col-md-3">
                         <div class="card h-100 border-warning">
                             <div class="card-body">
+                                <h6 class="card-title text-success">Active Staff</h6>
+                                <h2 class="mt-3 mb-0">{{ number_format($activeStaff) }}</h2>
                                 <h6 class="card-title text-warning">Total Salary</h6>
-                                <h2 class="mt-3 mb-0">#{{ number_format($totalSalary, 2) }}</h2>
+                                <h6 class="mt-3 mb-0">#{{ number_format($totalSalary, 2) }}</h6>
                                 <p class="text-danger mb-0"><i class="bi bi-arrow-down"></i> </p>
                             </div>
                         </div>
@@ -37,8 +39,10 @@
                     <div class="col-md-3">
                         <div class="card h-100 border-success">
                             <div class="card-body">
-                                <h6 class="card-title text-success">Active Staff</h6>
-                                <h2 class="mt-3 mb-0">{{ number_format($activeStaff) }}</h2>
+                                <h6 class="card-title text-success">Miscellaneous Income</h6>
+                                <h2 class="mt-3 mb-0">Total: ₦{{ number_format($uniform_stationeries, 2) }}</h2>
+                                <h2 class="mt-3 mb-0">Uniform: ₦{{ number_format($uniform_only, 2) }}</h2>
+                                <h2 class="mt-3 mb-0">Stationeries: ₦{{ number_format($stationeries_only, 2) }}</h2>
                                 <p class="text-success mb-0"><i class="bi bi-arrow-up"></i> </p>
                             </div>
                         </div>
@@ -47,9 +51,9 @@
                         <div class="card h-100 border-info">
                             <div class="card-body">
                                 <h6 class="card-title text-info">Total Revenue</h6>
-                                <h5 class="mt-3 mb-0">Expected Fees: ₦{{ number_format($totalExpected, 2) }}</h5>
-                                <h5 class="mt-3 mb-0">TotalPaid: #{{ number_format($totalRevenue, 2) }}</h5>
-                                <h5 class="mt-3 mb-0">Outstanding: ₦{{ number_format($outstandingBalance, 2) }}</h5>
+                                <h6 class="mt-3 mb-0">Expected Fees: ₦{{ number_format($totalExpected, 2) }}</h6>
+                                <h6 class="mt-3 mb-0">TotalPaid: #{{ number_format($totalRevenue, 2) }}</h6>
+                                <h6 class="mt-3 mb-0">Outstanding: ₦{{ number_format($outstandingBalance, 2) }}</h6>
                             </div>
                         </div>
                     </div>

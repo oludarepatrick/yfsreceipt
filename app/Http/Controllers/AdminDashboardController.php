@@ -75,6 +75,21 @@ class AdminDashboardController extends Controller
         ? round(($totalRevenue / $totalExpected) * 100, 2)
         : 0;
 
+    $totalUniformStationeries = StudentReceipts::sum(
+    DB::raw('COALESCE(uniform,0) + COALESCE(stationeries,0)')
+);
+
+$totalUniformOnly = StudentReceipts::sum('uniform');
+$totalStationeriesOnly = StudentReceipts::sum('stationeries');
+
+    $termUniformOnly = StudentReceipts::select('term', DB::raw('SUM(uniform) as total'))
+    ->groupBy('term')
+    ->pluck('total', 'term');
+
+    $termStationeriesOnly = StudentReceipts::select('term', DB::raw('SUM(stationeries) as total'))
+        ->groupBy('term')
+        ->pluck('total', 'term');
+
 
     // Normalize terms to your expected keys
     $chartData = [
@@ -94,6 +109,9 @@ class AdminDashboardController extends Controller
         'collectionPercentage'  => $collectionPercentage,
         'totalSalary'    => $totalSalary,
         'recentInvoices' => $recentInvoices,
+        'uniform_stationeries' => $totalUniformStationeries,
+    'uniform_only'         => $totalUniformOnly,
+    'stationeries_only'    => $totalStationeriesOnly,
         'chartData'      => $chartData,
     ]);
 
