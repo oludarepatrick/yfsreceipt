@@ -40,9 +40,9 @@
                         <div class="card h-100 border-success">
                             <div class="card-body">
                                 <h6 class="card-title text-success">Miscellaneous Income</h6>
-                                <h2 class="mt-3 mb-0">Total: ₦{{ number_format($uniform_stationeries, 2) }}</h2>
-                                <h2 class="mt-3 mb-0">Uniform: ₦{{ number_format($uniform_only, 2) }}</h2>
-                                <h2 class="mt-3 mb-0">Stationeries: ₦{{ number_format($stationeries_only, 2) }}</h2>
+                                <h6 class="mt-3 mb-0">Total: ₦{{ number_format($uniform_stationeries, 2) }}</h6>
+                                <h6 class="mt-3 mb-0">Uniform: ₦{{ number_format($uniform_only, 2) }}</h6>
+                                <h6 class="mt-3 mb-0">Stationeries: ₦{{ number_format($stationeries_only, 2) }}</h6>
                                 <p class="text-success mb-0"><i class="bi bi-arrow-up"></i> </p>
                             </div>
                         </div>
