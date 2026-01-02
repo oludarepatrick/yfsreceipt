@@ -105,7 +105,7 @@ if ($validated['category'] === 'staff') {
                 'template_key' => 'onboarding-notice',
                 'from' => [
                     'address' => 'development@schooldrive.com.ng',
-                    'name'    => 'School Management Team'
+                    'name'    => 'Yellow Field Fountain Schools'
                 ],
                 'to' => [
                     ['email_address' => ['address' => $user->email]]
