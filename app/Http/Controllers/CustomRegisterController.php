@@ -67,6 +67,7 @@ if ($validated['category'] === 'staff') {
         'term'      => $user->term ?? 'N/A',
         'category'      => $user->category ?? 'N/A',
         'session'   => $user->session ?? 'N/A',
+        'school_name'   => 'Yellow Field Fountain Schools',
         'date'      => Carbon::now()->format('Y-m-d'),
     ];
 
@@ -105,7 +106,7 @@ if ($validated['category'] === 'staff') {
                 'template_key' => 'onboarding-notice',
                 'from' => [
                     'address' => 'development@schooldrive.com.ng',
-                    'name'    => 'Yellow Field Fountain Schools'
+                    'name'    => 'School Management Team'
                 ],
                 'to' => [
                     ['email_address' => ['address' => $user->email]]
