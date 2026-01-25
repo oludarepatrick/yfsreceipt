@@ -51,7 +51,7 @@
                             <div class="card-body">
                                 <h6 class="card-title text-info">Total Revenue</h6>
                                 <h6 class="mt-3 mb-0">Expected Fees: ₦{{ number_format($totalExpected, 2) }}</h6>
-                                <h6 class="mt-3 mb-0">TotalPaid: #{{ number_format($totalRevenue, 2) }}</h6>
+                                <h6 class="mt-3 mb-0">TotalPaid: ₦{{ number_format($totalRevenue, 2) }}</h6>
                                 <h6 class="mt-3 mb-0">Outstanding: ₦{{ number_format($outstandingBalance, 2) }}</h6>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                                                 <small>{{ $invoice->created_at->diffForHumans() }}</small>
                                             </div>
                                             <p class="mb-1">Term {{ ucfirst($invoice->term) }} Fees</p>
-                                            <small class="text-success">#{{ number_format($invoice->amount_paid, 2) }}</small>
+                                            <small class="text-success">₦{{ number_format($invoice->amount_paid, 2) }}</small>
                                         </div>
                                     @endforeach
 
