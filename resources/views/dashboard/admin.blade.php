@@ -30,9 +30,9 @@
                             <div class="card-body">
                                 <h6 class="card-title text-success">Active Staff</h6>
                                 <h2 class="mt-3 mb-0">{{ number_format($activeStaff) }}</h2>
-                                <h6 class="card-title text-warning">Total Salary</h6>
+                                <h6 class="card-title text-warning">Total Net Salary</h6>
                                 <h6 class="mt-3 mb-0">#{{ number_format($totalSalary, 2) }}</h6>
-                                <p class="text-danger mb-0"><i class="bi bi-arrow-down"></i> </p>
+                                <h6 class="card-title text-warning">Total Gross Salary: #{{ number_format($totalGrossSalary, 2) }} </h6>
                             </div>
                         </div>
                     </div>

@@ -48,6 +48,10 @@ class AdminDashboardController extends Controller
     $totalSalary = StaffSalary::where('status', 'paid')
         ->sum('net_pay');
 
+    // ✅ Total gross salary paid (sum of net_pay for paid salaries)
+    $totalGrossSalary = StaffSalary::where('status', 'paid')
+        ->sum('gross');
+
     // ✅ 3 most recent invoices (include student relationship)
     
         $recentInvoices = StudentReceipts::with(['student'])

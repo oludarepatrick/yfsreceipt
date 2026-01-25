@@ -17,7 +17,7 @@
                     </div>
                     <div class="col-md-4">
                         <label class="form-label small fw-bold">Total Expected (Fees Setup)</label>
-                        <input type="text" name="total_expected1" class="form-control form-control-sm bg-white" value="{{ $expectedFees->total ?? 0 }}" readonly>
+                        <input type="text" name="total_expected1" class="form-control form-control-sm bg-white" value="{{ $expectedFees->total ?? 0 }}">
                     </div>
                     <div class="col-md-4">
                         <label class="form-label small fw-bold text-primary">Total Expected + Outstanding</label>
