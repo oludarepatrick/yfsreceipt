@@ -112,6 +112,7 @@ $totalStationeriesOnly = StudentReceipts::sum('stationeries');
         'outstandingBalance'    => $outstandingBalance,
         'collectionPercentage'  => $collectionPercentage,
         'totalSalary'    => $totalSalary,
+        'totalGrossSalary'    => $totalGrossSalary,
         'recentInvoices' => $recentInvoices,
         'uniform_stationeries' => $totalUniformStationeries,
     'uniform_only'         => $totalUniformOnly,
